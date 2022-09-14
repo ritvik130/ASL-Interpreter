@@ -1,2 +1,5 @@
-# ASL-Interpreter
-Capstone projected for evaluation in CEG 4912 &amp; 4913
+CEG 4912 & 4913 Project (Capstone Project)
+
+# Students
+
+Ritvik Johar 300074686
