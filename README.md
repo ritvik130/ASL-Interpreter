@@ -1,4 +1,4 @@
-CEG 4912 & 4913 Project (Capstone Project)
+CEG 4912 & 4913 (Capstone Project)
 
 # Students
 
