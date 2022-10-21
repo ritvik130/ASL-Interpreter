@@ -29,12 +29,14 @@ def move_function(base_path, images: dict, copy_images, percentage_test=0.3):
         move(jpg, train_path, copy_images)
         move(images.get(jpg), train_path, copy_images)
         images.pop(jpg)
-    
-def move(initial_dir, final_dir, copy_images:bool):
+
+
+def move(initial_dir, final_dir, copy_images: bool):
     if copy_images == True:
         shutil.copy(initial_dir, final_dir)
     else:
         shutil.move(initial_dir, final_dir)
+
 
 class ImageTestTrain:
     def __init__(self, base_path):
@@ -56,14 +58,15 @@ class ImageTestTrain:
                 if name == '.DS_Store':
                     os.remove(os.path.join(dir_path, name))
                 elif os.path.exists(f'{os.path.join(dir_path, name)}.jpg') and os.path.exists(
-                                    f'{os.path.join(dir_path, name)}.xml'):
+                        f'{os.path.join(dir_path, name)}.xml'):
                     images_path[f'{os.path.join(dir_path, name)}.jpg'] = f'{os.path.join(dir_path, name)}.xml'
                 else:
                     print(f"Error!! Skipping file: {name}")
             move_function(self.base_path, images_path, copy_images)
         print('Done')
 
+
 # Enter images folder path. Enter the full path and not relative path
 path = r''
-images_list = ImageTestTrain(path, copy_images=False)
+images_list = ImageTestTrain(path, copy_images=True)
 images_list.move_images()
